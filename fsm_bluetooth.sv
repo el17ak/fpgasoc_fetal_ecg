@@ -1,10 +1,9 @@
 package fsm_bluetooth;
 
-	typedef enum logic[]{
-		WAIT = 000,
-		TRANSMIT = 001,
-		DONE = 010
-		
+	typedef enum logic[2:0]{
+		WAIT = 3'b000,
+		TRANSMIT = 3'b001,
+		DONE = 3'b010
 	} state_global;
 	
 	typedef enum logic[3:0]{

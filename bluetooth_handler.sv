@@ -4,6 +4,7 @@ module bluetooth_handler #(
 )
 (
 	input logic start,
+	input logic rst,
 	input logic[31:0] in_data[N_SAMPLES],
 	output logic TX
 );

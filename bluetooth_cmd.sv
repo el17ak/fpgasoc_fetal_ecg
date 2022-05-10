@@ -31,7 +31,7 @@ module bluetooth_cmd #(
              
 			if(in_tx_start == 1'b1) begin
 				loc_tx_active <= 1'b1;
-				loc_tx_data <= in_tx_data;
+				loc_tx_data <= in_tx_cmd;
 				state <= TX_START_BIT;
 			end
 			else
