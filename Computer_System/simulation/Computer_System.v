@@ -4,6 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module Computer_System (
+		input  wire [31:0] hps_f2h_irq0_irq,                //         hps_f2h_irq0.irq
 		output wire        hps_io_hps_io_emac1_inst_TX_CLK, //               hps_io.hps_io_emac1_inst_TX_CLK
 		output wire        hps_io_hps_io_emac1_inst_TXD0,   //                     .hps_io_emac1_inst_TXD0
 		output wire        hps_io_hps_io_emac1_inst_TXD1,   //                     .hps_io_emac1_inst_TXD1
@@ -207,8 +208,7 @@ module Computer_System (
 	wire         mm_interconnect_2_onchip_sram_s1_write;                // mm_interconnect_2:Onchip_SRAM_s1_write -> Onchip_SRAM:write
 	wire  [31:0] mm_interconnect_2_onchip_sram_s1_writedata;            // mm_interconnect_2:Onchip_SRAM_s1_writedata -> Onchip_SRAM:writedata
 	wire         mm_interconnect_2_onchip_sram_s1_clken;                // mm_interconnect_2:Onchip_SRAM_s1_clken -> Onchip_SRAM:clken
-	wire  [31:0] arm_a9_hps_f2h_irq0_irq;                               // irq_mapper:sender_irq -> ARM_A9_HPS:f2h_irq_p0
-	wire  [31:0] arm_a9_hps_f2h_irq1_irq;                               // irq_mapper_001:sender_irq -> ARM_A9_HPS:f2h_irq_p1
+	wire  [31:0] arm_a9_hps_f2h_irq1_irq;                               // irq_mapper:sender_irq -> ARM_A9_HPS:f2h_irq_p1
 	wire         rst_controller_reset_out_reset;                        // rst_controller:reset_out -> [Onchip_SRAM:reset, dma_1:system_reset_n, dma_2:system_reset_n, mm_interconnect_0:dma_1_reset_reset_bridge_in_reset_reset, mm_interconnect_1:dma_1_reset_reset_bridge_in_reset_reset, mm_interconnect_2:dma_2_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                    // rst_controller:reset_req -> [Onchip_SRAM:reset_req, rst_translator:reset_req_in]
 	wire         arm_a9_hps_h2f_reset_reset;                            // ARM_A9_HPS:h2f_rst_n -> [rst_controller:reset_in0, rst_controller_001:reset_in0]
@@ -405,7 +405,7 @@ module Computer_System (
 		.h2f_lw_RLAST             (arm_a9_hps_h2f_lw_axi_master_rlast),                 //                  .rlast
 		.h2f_lw_RVALID            (arm_a9_hps_h2f_lw_axi_master_rvalid),                //                  .rvalid
 		.h2f_lw_RREADY            (arm_a9_hps_h2f_lw_axi_master_rready),                //                  .rready
-		.f2h_irq_p0               (arm_a9_hps_f2h_irq0_irq),                            //          f2h_irq0.irq
+		.f2h_irq_p0               (hps_f2h_irq0_irq),                                   //          f2h_irq0.irq
 		.f2h_irq_p1               (arm_a9_hps_f2h_irq1_irq)                             //          f2h_irq1.irq
 	);
 
@@ -620,12 +620,6 @@ module Computer_System (
 	);
 
 	Computer_System_irq_mapper irq_mapper (
-		.clk        (),                        //       clk.clk
-		.reset      (),                        // clk_reset.reset
-		.sender_irq (arm_a9_hps_f2h_irq0_irq)  //    sender.irq
-	);
-
-	Computer_System_irq_mapper irq_mapper_001 (
 		.clk        (),                        //       clk.clk
 		.reset      (),                        // clk_reset.reset
 		.sender_irq (arm_a9_hps_f2h_irq1_irq)  //    sender.irq

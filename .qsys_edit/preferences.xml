@@ -3,14 +3,14 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="30" />
-   <irq preferredWidth="34" />
+   <connections preferredWidth="223" />
+   <irq preferredWidth="47" />
    <name preferredWidth="196" />
    <inputclock preferredWidth="222" />
    <export preferredWidth="196" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Processors and Peripherals/Hard Processor Systems,Library/Processors and Peripherals,Project,Library" />
+ <library expandedCategories="Project,Library" />
  <window width="1100" height="800" x="75" y="128" />
+ <generation greybox="1" block_symbol_file="0" simulation="VERILOG" />
 </preferences>

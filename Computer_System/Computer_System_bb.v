@@ -73,6 +73,8 @@ module Computer_System (
 	memory_mem_dm,
 	memory_oct_rzqin,
 	onchip_sram_clk2_clk,
+	onchip_sram_reset2_reset,
+	onchip_sram_reset2_reset_req,
 	onchip_sram_s2_address,
 	onchip_sram_s2_chipselect,
 	onchip_sram_s2_clken,
@@ -83,8 +85,7 @@ module Computer_System (
 	sdram_clk_clk,
 	system_pll_ref_clk_clk,
 	system_pll_ref_reset_reset,
-	onchip_sram_reset2_reset,
-	onchip_sram_reset2_reset_req);	
+	hps_f2h_irq0_irq);	
 
 	output		hps_io_hps_io_emac1_inst_TX_CLK;
 	output		hps_io_hps_io_emac1_inst_TXD0;
@@ -159,6 +160,8 @@ module Computer_System (
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
 	input		onchip_sram_clk2_clk;
+	input		onchip_sram_reset2_reset;
+	input		onchip_sram_reset2_reset_req;
 	input	[13:0]	onchip_sram_s2_address;
 	input		onchip_sram_s2_chipselect;
 	input		onchip_sram_s2_clken;
@@ -169,6 +172,5 @@ module Computer_System (
 	output		sdram_clk_clk;
 	input		system_pll_ref_clk_clk;
 	input		system_pll_ref_reset_reset;
-	input		onchip_sram_reset2_reset;
-	input		onchip_sram_reset2_reset_req;
+	input	[31:0]	hps_f2h_irq0_irq;
 endmodule

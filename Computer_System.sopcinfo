@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2022.05.06.15:35:13 -->
+ <!-- 2022.05.10.21:52:21 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1651847712</value>
+  <value>1652215940</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -51,6 +51,16 @@
   <visible>false</visible>
   <valid>true</valid>
   <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_HPS_F2H_IRQ0_INTERRUPTS_USED">
+  <type>java.math.BigInteger</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>INTERRUPTS_USED</sysinfo_type>
+  <sysinfo_arg>hps_f2h_irq0</sysinfo_arg>
  </parameter>
  <parameter name="AUTO_ONCHIP_SRAM_CLK2_CLOCK_RATE">
   <type>java.lang.Long</type>

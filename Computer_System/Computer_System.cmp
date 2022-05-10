@@ -84,7 +84,8 @@
 			onchip_sram_s2_byteenable       : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
 			sdram_clk_clk                   : out   std_logic;                                        -- clk
 			system_pll_ref_clk_clk          : in    std_logic                     := 'X';             -- clk
-			system_pll_ref_reset_reset      : in    std_logic                     := 'X'              -- reset
+			system_pll_ref_reset_reset      : in    std_logic                     := 'X';             -- reset
+			hps_f2h_irq0_irq                : in    std_logic_vector(31 downto 0) := (others => 'X')  -- irq
 		);
 	end component Computer_System;
 

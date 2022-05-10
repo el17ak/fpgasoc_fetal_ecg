@@ -73,6 +73,8 @@
 			memory_mem_dm                   : out   std_logic_vector(3 downto 0);                     -- mem_dm
 			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
 			onchip_sram_clk2_clk            : in    std_logic                     := 'X';             -- clk
+			onchip_sram_reset2_reset        : in    std_logic                     := 'X';             -- reset
+			onchip_sram_reset2_reset_req    : in    std_logic                     := 'X';             -- reset_req
 			onchip_sram_s2_address          : in    std_logic_vector(13 downto 0) := (others => 'X'); -- address
 			onchip_sram_s2_chipselect       : in    std_logic                     := 'X';             -- chipselect
 			onchip_sram_s2_clken            : in    std_logic                     := 'X';             -- clken
@@ -83,8 +85,7 @@
 			sdram_clk_clk                   : out   std_logic;                                        -- clk
 			system_pll_ref_clk_clk          : in    std_logic                     := 'X';             -- clk
 			system_pll_ref_reset_reset      : in    std_logic                     := 'X';             -- reset
-			onchip_sram_reset2_reset        : in    std_logic                     := 'X';             -- reset
-			onchip_sram_reset2_reset_req    : in    std_logic                     := 'X'              -- reset_req
+			hps_f2h_irq0_irq                : in    std_logic_vector(31 downto 0) := (others => 'X')  -- irq
 		);
 	end component Computer_System;
 
@@ -163,6 +164,8 @@
 			memory_mem_dm                   => CONNECTED_TO_memory_mem_dm,                   --                     .mem_dm
 			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin,                --                     .oct_rzqin
 			onchip_sram_clk2_clk            => CONNECTED_TO_onchip_sram_clk2_clk,            --     onchip_sram_clk2.clk
+			onchip_sram_reset2_reset        => CONNECTED_TO_onchip_sram_reset2_reset,        --   onchip_sram_reset2.reset
+			onchip_sram_reset2_reset_req    => CONNECTED_TO_onchip_sram_reset2_reset_req,    --                     .reset_req
 			onchip_sram_s2_address          => CONNECTED_TO_onchip_sram_s2_address,          --       onchip_sram_s2.address
 			onchip_sram_s2_chipselect       => CONNECTED_TO_onchip_sram_s2_chipselect,       --                     .chipselect
 			onchip_sram_s2_clken            => CONNECTED_TO_onchip_sram_s2_clken,            --                     .clken
@@ -173,7 +176,6 @@
 			sdram_clk_clk                   => CONNECTED_TO_sdram_clk_clk,                   --            sdram_clk.clk
 			system_pll_ref_clk_clk          => CONNECTED_TO_system_pll_ref_clk_clk,          --   system_pll_ref_clk.clk
 			system_pll_ref_reset_reset      => CONNECTED_TO_system_pll_ref_reset_reset,      -- system_pll_ref_reset.reset
-			onchip_sram_reset2_reset        => CONNECTED_TO_onchip_sram_reset2_reset,        --   onchip_sram_reset2.reset
-			onchip_sram_reset2_reset_req    => CONNECTED_TO_onchip_sram_reset2_reset_req     --                     .reset_req
+			hps_f2h_irq0_irq                => CONNECTED_TO_hps_f2h_irq0_irq                 --         hps_f2h_irq0.irq
 		);
 

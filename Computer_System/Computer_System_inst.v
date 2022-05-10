@@ -72,6 +72,8 @@
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //                     .mem_dm
 		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //                     .oct_rzqin
 		.onchip_sram_clk2_clk            (<connected-to-onchip_sram_clk2_clk>),            //     onchip_sram_clk2.clk
+		.onchip_sram_reset2_reset        (<connected-to-onchip_sram_reset2_reset>),        //   onchip_sram_reset2.reset
+		.onchip_sram_reset2_reset_req    (<connected-to-onchip_sram_reset2_reset_req>),    //                     .reset_req
 		.onchip_sram_s2_address          (<connected-to-onchip_sram_s2_address>),          //       onchip_sram_s2.address
 		.onchip_sram_s2_chipselect       (<connected-to-onchip_sram_s2_chipselect>),       //                     .chipselect
 		.onchip_sram_s2_clken            (<connected-to-onchip_sram_s2_clken>),            //                     .clken
@@ -82,7 +84,6 @@
 		.sdram_clk_clk                   (<connected-to-sdram_clk_clk>),                   //            sdram_clk.clk
 		.system_pll_ref_clk_clk          (<connected-to-system_pll_ref_clk_clk>),          //   system_pll_ref_clk.clk
 		.system_pll_ref_reset_reset      (<connected-to-system_pll_ref_reset_reset>),      // system_pll_ref_reset.reset
-		.onchip_sram_reset2_reset        (<connected-to-onchip_sram_reset2_reset>),        //   onchip_sram_reset2.reset
-		.onchip_sram_reset2_reset_req    (<connected-to-onchip_sram_reset2_reset_req>)     //                     .reset_req
+		.hps_f2h_irq0_irq                (<connected-to-hps_f2h_irq0_irq>)                 //         hps_f2h_irq0.irq
 	);
 
